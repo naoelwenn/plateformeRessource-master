@@ -6,12 +6,11 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.jdbc.core.JdbcTemplate;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UtilisateurService {
@@ -38,7 +37,7 @@ public class UtilisateurService {
             if (utilisateur.getEmail() == null || utilisateur.getPseudo() == null ||
                     utilisateur.getCodepostal() == null || utilisateur.getVille() == null ||
                     utilisateur.getPassword() == null || utilisateur.getAnneenaissance() == null ||
-                    utilisateur.getEtatCivil() == null) {
+                    utilisateur.getEtatcivil() == null) {
                 throw new RuntimeException("Tous les champs sont obligatoires");
             }
 

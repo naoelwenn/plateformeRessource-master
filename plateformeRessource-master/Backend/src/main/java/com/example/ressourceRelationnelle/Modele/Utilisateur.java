@@ -18,7 +18,7 @@ public class Utilisateur {
     private String ville;
     private String password;
     private Integer anneenaissance;
-    private String etatCivil;
+    private String etatcivil;
     private Boolean actif;
 
     public Utilisateur() {}
@@ -26,7 +26,7 @@ public class Utilisateur {
     // Ajout d'un constructeur avec ID
     public Utilisateur(Long id, String email, String pseudo, String codepostal,
                        String ville, String password, Integer anneenaissance,
-                       String etatCivil) {
+                       String etatcivil) {
         this.id = id;
         this.email = email;
         this.pseudo = pseudo;
@@ -34,7 +34,7 @@ public class Utilisateur {
         this.ville = ville;
         this.password = password;
         this.anneenaissance = anneenaissance;
-        this.etatCivil = etatCivil;
+        this.etatcivil = etatcivil;
         this.actif = true;
     }
 
@@ -46,7 +46,7 @@ public class Utilisateur {
     public String getVille() { return this.ville; }
     public String getPassword() { return this.password; }
     public Integer getAnneenaissance() { return this.anneenaissance; }
-    public String getEtatCivil() { return this.etatCivil; }
+    public String getEtatcivil() { return this.etatcivil; }
     public Boolean getActif() { return this.actif; }
 
     // Setters
@@ -56,6 +56,6 @@ public class Utilisateur {
     public void setVille(String ville) { this.ville = ville; }
     public void setPassword(String password) { this.password = password; }
     public void setAnneenaissance(Integer anneenaissance) { this.anneenaissance = anneenaissance; }
-    public void setEtatCivil(String etatCivil) { this.etatCivil = etatCivil; }
+    public void setEtatcivil(String etatcivil) { this.etatcivil = etatcivil; }
     public void setActif(Boolean actif) { this.actif = actif; }
 }

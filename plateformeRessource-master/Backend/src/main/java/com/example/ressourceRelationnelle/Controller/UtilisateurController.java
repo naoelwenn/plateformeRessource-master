@@ -113,7 +113,7 @@ public class UtilisateurController {
         }
 
         // Validation de l'état civil
-        if (utilisateur.getEtatCivil() == null || utilisateur.getEtatCivil().trim().isEmpty()) {
+        if (utilisateur.getEtatcivil() == null || utilisateur.getEtatcivil().trim().isEmpty()) {
             erreurs.put("etatCivil", "L'état civil est requis");
         }
 

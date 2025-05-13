@@ -25,7 +25,7 @@ public class ConnexionResponse {
         this.codepostal = utilisateur.getCodepostal();
         this.ville = utilisateur.getVille();
         this.anneenaissance = utilisateur.getAnneenaissance();
-        this.etatCivil = utilisateur.getEtatCivil();
+        this.etatCivil = utilisateur.getEtatcivil();
         this.actif = utilisateur.getActif();
     }
 
