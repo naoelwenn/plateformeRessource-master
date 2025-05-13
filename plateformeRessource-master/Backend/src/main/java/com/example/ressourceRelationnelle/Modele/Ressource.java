@@ -14,7 +14,7 @@ public class Ressource {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titre;
-    private LocalDateTime dateCreation;
+    private LocalDateTime datecreation;
     private String contenu;
     private boolean valide;
     private boolean suspendu;
@@ -50,7 +50,7 @@ public class Ressource {
     //-- GETTER / SETTER
     public Long getId(){return this.id;}
     public String getTitre(){return this.titre;}
-    public LocalDateTime getDateCreation(){return this.dateCreation;}
+    public LocalDateTime getDateCreation(){return this.datecreation;}
     public boolean isValide() {return valide;}
     public boolean isSuspendu() {return suspendu;}
     public String getContenu(){return this.contenu;}
@@ -60,7 +60,7 @@ public class Ressource {
     public Set<Type_Relation> getType_relation(){return this.type_relation;}
 
     public void setId(Long id) {this.id = id;}
-    public void setDateCreation(LocalDateTime dateCreation) {this.dateCreation = dateCreation;}
+    public void setDateCreation(LocalDateTime dateCreation) {this.datecreation = dateCreation;}
     public void setTitre(String titre){this.titre = titre;}
     public void setContenu(String contenu) {this.contenu = contenu;}
     public void setValide(boolean valide) {this.valide = valide;}
