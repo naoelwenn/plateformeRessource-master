@@ -2,6 +2,8 @@ package com.example.ressourceRelationnelle.Controller;
 
 import com.example.ressourceRelationnelle.Modele.Utilisateur;
 import com.example.ressourceRelationnelle.Service.UtilisateurService;
+import com.example.ressourceRelationnelle.DTO.ConnexionRequest;
+import com.example.ressourceRelationnelle.DTO.ConnexionResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -51,10 +53,10 @@ public class UtilisateurController {
     }
 
     @PostMapping("/connexion")
-    public ResponseEntity<?> connexion(@RequestBody Map<String, String> credentials) {
+    public ResponseEntity<?> connexion(@Valid @RequestBody ConnexionRequest credentials) {
         try {
-            String email = credentials.get("email");
-            String password = credentials.get("motDePasse");
+            String email = credentials.getEmail();
+            String password = credentials.getPassword();
 
             if (email == null || password == null) {
                 return ResponseEntity.badRequest().body("Email et mot de passe requis");
@@ -66,7 +68,8 @@ public class UtilisateurController {
             }
 
             Utilisateur utilisateur = utilisateurService.connexion(email, password);
-            return ResponseEntity.ok(utilisateur);
+            ConnexionResponse response = new ConnexionResponse(utilisateur);
+            return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
