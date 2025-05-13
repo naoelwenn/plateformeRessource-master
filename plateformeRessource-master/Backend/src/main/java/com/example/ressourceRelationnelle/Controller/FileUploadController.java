@@ -70,4 +70,21 @@ public class FileUploadController {
             return ResponseEntity.status(500).build();
         }
     }
+
+    @GetMapping("/ressources/{id}/fileExist")
+    public String fileExist(@PathVariable Long id){
+        File ressourceDir = new File(BASE_UPLOAD_DIR + File.separator + id);
+
+        if (!ressourceDir.exists() || !ressourceDir.isDirectory()) {
+            return "";
+        }
+
+        File[] files = ressourceDir.listFiles();
+        if (files == null || files.length == 0) {
+            return "";
+        }
+
+        File file = files[0];
+        return file.getName();// On prend le premier (et normalement unique) fichier
+    }
 }
