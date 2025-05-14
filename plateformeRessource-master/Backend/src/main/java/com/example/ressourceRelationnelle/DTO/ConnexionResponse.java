@@ -13,6 +13,7 @@ public class ConnexionResponse {
     private Integer anneenaissance;
     private String etatCivil;
     private Boolean actif;
+    private String token;
 
     // Constructeur par défaut
     public ConnexionResponse() {}
@@ -27,6 +28,12 @@ public class ConnexionResponse {
         this.anneenaissance = utilisateur.getAnneenaissance();
         this.etatCivil = utilisateur.getEtatcivil();
         this.actif = utilisateur.getActif();
+    }
+
+    public ConnexionResponse(String token, Utilisateur utilisateur){
+        this.token = token;
+        this.id = utilisateur.getId();
+        this.pseudo = utilisateur.getPseudo();
     }
 
     // Getters et Setters
@@ -53,4 +60,7 @@ public class ConnexionResponse {
 
     public Boolean getActif() { return actif; }
     public void setActif(Boolean actif) { this.actif = actif; }
+
+    public String getToken(){return this.token;}
+    public void setToken(String token){this.token = token;}
 }

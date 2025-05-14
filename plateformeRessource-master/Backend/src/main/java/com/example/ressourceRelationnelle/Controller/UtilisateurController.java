@@ -1,5 +1,6 @@
 package com.example.ressourceRelationnelle.Controller;
 
+import com.example.ressourceRelationnelle.DTO.JwtUtil;
 import com.example.ressourceRelationnelle.Modele.Utilisateur;
 import com.example.ressourceRelationnelle.Service.UtilisateurService;
 import com.example.ressourceRelationnelle.DTO.ConnexionRequest;
@@ -24,6 +25,9 @@ public class UtilisateurController {
 
     @Autowired
     private UtilisateurService utilisateurService;
+
+    @Autowired
+    private JwtUtil jwtUtil;
 
     @GetMapping
     public ResponseEntity<?> getAllUtilisateur() {
@@ -68,7 +72,10 @@ public class UtilisateurController {
             }
 
             Utilisateur utilisateur = utilisateurService.connexion(email, password);
-            ConnexionResponse response = new ConnexionResponse(utilisateur);
+            String token = jwtUtil.generateToken(utilisateur);
+
+            //ConnexionResponse response = new ConnexionResponse(utilisateur);
+            ConnexionResponse response = new ConnexionResponse(token, utilisateur);
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
