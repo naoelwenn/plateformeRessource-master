@@ -18,7 +18,11 @@ public class Ressource {
     private String contenu;
     private boolean valide;
     private boolean suspendu;
-    private int utilisateur_id;
+
+    //-- Catégorie ressource
+    @ManyToOne
+    @JoinColumn(name = "utilisateur_id")
+    private Utilisateur utilisateur = new Utilisateur();
 
     //-- Catégorie ressource
     @ManyToOne
@@ -55,7 +59,7 @@ public class Ressource {
     public boolean isSuspendu() {return suspendu;}
     public String getContenu(){return this.contenu;}
     public Type_Ressource getType_ressource(){return this.type_ressource;}
-    public int getUtilisateur_id(){return this.utilisateur_id;}
+    public Utilisateur getUtilisateur(){return this.utilisateur;}
     public Categorie_Ressource getCategorie_ressource(){return this.categorie_ressource;}
     public Set<Type_Relation> getType_relation(){return this.type_relation;}
 
@@ -65,7 +69,7 @@ public class Ressource {
     public void setContenu(String contenu) {this.contenu = contenu;}
     public void setValide(boolean valide) {this.valide = valide;}
     public void setSuspendu(boolean suspendu) {this.suspendu = suspendu;}
-    public void setUtilisateur_id(int utilisateur_id) {this.utilisateur_id = utilisateur_id;}
+    public void setUtilisateur(Utilisateur utilisateur) {this.utilisateur = utilisateur;}
     public void setCategorie_ressource(Categorie_Ressource categorie_ressource) {this.categorie_ressource = categorie_ressource;}
     public void setType_ressource(Type_Ressource type_ressource) {this.type_ressource = type_ressource;}
     public void setType_relation(Set<Type_Relation> type_relation) {this.type_relation = type_relation;}

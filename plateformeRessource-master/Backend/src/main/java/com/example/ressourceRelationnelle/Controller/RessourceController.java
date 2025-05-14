@@ -45,7 +45,7 @@ public class RessourceController {
                     ressource.setDateCreation(updatedRessource.getDateCreation());
                     ressource.setValide(updatedRessource.isValide());
                     ressource.setSuspendu(updatedRessource.isSuspendu());
-                    ressource.setUtilisateur_id(updatedRessource.getUtilisateur_id());
+                    ressource.setUtilisateur(updatedRessource.getUtilisateur());
                     ressource.setCategorie_ressource(updatedRessource.getCategorie_ressource());
                     ressource.setType_ressource(updatedRessource.getType_ressource());
                     ressource.setType_relation(updatedRessource.getType_relation());
