@@ -40,7 +40,7 @@ class UtilisateurServiceTest {
         utilisateur.setCodepostal("75000");
         utilisateur.setVille("Paris");
         utilisateur.setAnneenaissance(1990);
-        utilisateur.setEtatcivil("Célibataire");
+        utilisateur.setEtatcivil("H");
 
         when(utilisateurRepository.findByEmail(anyString())).thenReturn(null);
         when(utilisateurRepository.save(any(Utilisateur.class))).thenReturn(utilisateur);

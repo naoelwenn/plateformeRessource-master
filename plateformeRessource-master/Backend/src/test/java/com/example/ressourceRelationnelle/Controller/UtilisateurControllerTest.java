@@ -42,7 +42,7 @@ class UtilisateurControllerTest {
         utilisateur.setCodepostal("75000");
         utilisateur.setVille("Paris");
         utilisateur.setAnneenaissance(1990);
-        utilisateur.setEtatcivil("Célibataire");
+        utilisateur.setEtatcivil("H");
 
         when(utilisateurService.inscription(any(Utilisateur.class))).thenReturn(utilisateur);
 
