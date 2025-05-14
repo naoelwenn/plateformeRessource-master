@@ -51,6 +51,7 @@ public class RessourceController {
                     ressource.setType_relation(updatedRessource.getType_relation());
                     Ressource saved = ressourceService.updateRessource(ressource);
                     return ResponseEntity.ok(saved);
+
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
