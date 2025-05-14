@@ -10,3 +10,4 @@ public class RessourceRelationnelleApplication {
         SpringApplication.run(RessourceRelationnelleApplication.class, args);
     }
 }
+

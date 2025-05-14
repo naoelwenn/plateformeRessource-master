@@ -53,7 +53,7 @@ public class UtilisateurService {
         }
     }
 
-    private String hashMD5(String password) {
+    String hashMD5(String password) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] messageDigest = md.digest(password.getBytes());
